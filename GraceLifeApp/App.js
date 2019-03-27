@@ -1,21 +1,27 @@
 import React from "react";
-import { StyleSheet, Text, View } from "react-native";
+import {
+  createStackNavigator,
+  createAppContainer,
+  createBottomTabNavigator
+} from "react-navigation";
+import HomeScreen from "./components/HomeScreen";
+import ProfileScreen from "./components/ProfileScreen";
 
-export default class App extends React.Component {
-  render() {
-    return (
-      <View style={styles.container}>
-        <Text>Hello world</Text>
-      </View>
-    );
-  }
-}
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: "#fff",
-    alignItems: "center",
-    justifyContent: "center"
+const HomeStack = createStackNavigator({
+  Home: {
+    screen: HomeScreen
   }
 });
+
+const SettingsStack = createStackNavigator({
+  Profile: {
+    screen: ProfileScreen
+  }
+});
+
+const App = createBottomTabNavigator({
+  Home: { screen: HomeStack },
+  Profile: { screen: SettingsStack }
+});
+
+export default createAppContainer(App);
