@@ -7,14 +7,26 @@ import {
 import HomeScreen from "./components/HomeScreen";
 import ProfileScreen from "./components/ProfileScreen";
 import MediaScreen from "./components/MediaScreen";
-import example from "./components/HomeScreenComp/example";
+import getConnected from "./components/HomeScreenComp/getConnected";
+import sunday from "./components/HomeScreenComp/sunday";
+import devotional from "./components/HomeScreenComp/devotional";
+import contactUs from "./components/HomeScreenComp/contactUs";
 
 const HomeStack = createStackNavigator({
   Home: {
     screen: HomeScreen
   },
-  example: {
-    screen: example
+  getConnected: {
+    screen: getConnected
+  },
+  sunday: {
+    screen: sunday
+  },
+  devotional: {
+    screen: devotional
+  },
+  contactUs: {
+    screen: contactUs
   }
 });
 const MediaStack = createStackNavigator({
